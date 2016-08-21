@@ -9,6 +9,7 @@ const (
 	CaddyfileLoaderPlugin            = "caddyfile_loader"
 	ServerPlugin                     = "server"
 	DNSProviderPlugin                = "dns_provider"
+	StorageProviderPlugin	         = "storage_provider"
 )
 
 // Plugin represents a Caddy plugin.
@@ -193,6 +194,13 @@ var Registry = Plugins{
 		Type:   DNSProviderPlugin,
 		Name:   "vultr",
 		Import: "github.com/caddyserver/dnsproviders/vultr",
+	},
+
+	// Storage providers
+	{
+		Type:   StorageProviderPlugin,
+		Name:   "kubernetes-storage",
+		Import: "github.com/PalmStoneGames/caddy-kubernetes-storage",
 	},
 }
 
